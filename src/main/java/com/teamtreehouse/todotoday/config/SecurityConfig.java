@@ -4,6 +4,7 @@ import com.teamtreehouse.todotoday.service.UserService;
 import com.teamtreehouse.todotoday.web.FlashMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.query.spi.EvaluationContextExtension;
 import org.springframework.data.repository.query.spi.EvaluationContextExtensionSupport;
@@ -22,6 +23,8 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 
 @Configuration
 @EnableWebSecurity
+@ComponentScan("com.teamtreehouse")
+@SuppressWarnings("SpringJavaAutowiringInspection")
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserService userService;
